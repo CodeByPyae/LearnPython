@@ -67,13 +67,11 @@ def convert_fahrenheit():
 def calculate_area_rectangle():
     try:
         # area = int(input("Length: ")) * int(input("Width: "))
-        length = input("Length: ")
-        length = int(length)
-        width = input("Width: ")
-        width = int(width)
+        length = int(input("Length: "))        
+        width = int(input("Width: "))        
         return print("Area of Rectangle: ", length * width)
     except ValueError:
-        print(f"Input value of length {length} and height {width} in which input value is not valid for caculation!")        
+        print(f"Input value of length or width is not valid for caculation!")        
         pass
 
 main()
