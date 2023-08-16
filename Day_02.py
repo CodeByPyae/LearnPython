@@ -14,36 +14,33 @@ def menu():
     print("| 6. Power               |")
     print("| 0. Exit Program        |")
     print(";------------------------;")    
-    
+
+def get_num():
+    while True:
+        try:
+            return float(input())
+            False
+        except ValueError:
+            print("Please enter valid number. ", end="")
+
 def operations():
     menu()
     while True:        
         try:
-            selectedmenu = int(input("\nSelect menu for operation."))
+            selectedmenu = int(input("\nSelect menu for operation. Or 0 for exit. "))
             
             if selectedmenu == 0:
                 print("Program Exit....\n")
                 False
                 break
             elif selectedmenu > 6 or selectedmenu < 0:
-                print("Invalid menu selection, please try again")
+                menu_error()
                 pass
-            else:
-                while True:
-                    try:
-                        x = int(input("Number 1: "))                        
-                        False
-                        break    
-                    except ValueError:
-                        print("Invalid input. Please enter number.")
-
-                while True:
-                    try:                        
-                        y = int(input("Number 2: "))                
-                        False
-                        break    
-                    except ValueError:
-                        print("Invalid input. Please enter number.")
+            else:                
+                print("Number 1: ", end="")
+                x = get_num()
+                print("Number 2: ", end="")
+                y = get_num()
 
                 if selectedmenu == 1:
                     add(x, y)
@@ -64,11 +61,14 @@ def operations():
                 elif selectedmenu == 6:
                     power(x, y)                
                 else:
-                    print("Invalid menu selection, please try again!")           
+                    menu_error()
                     break
 
         except ValueError:
-            print("Invalid menu selection, please try again")            
+            menu_error()               
+
+def menu_error():
+    print("Invalid menu selection, please try again")
 
 def add(x, y):
     return print(f"{x} + {y} = {x + y}")
