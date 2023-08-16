@@ -56,7 +56,6 @@ def convert_celsius():
         print("Input value of Fahrenheit is invalid, please provide correct value.")
         pass
         
-
 def convert_fahrenheit():
     try:
         c = int(input("Enter Celsius value: "))    
