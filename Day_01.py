@@ -39,8 +39,7 @@ def get_menu():
                 convert_celsius()
             elif selectedmenu == 3:
                 calculate_area_rectangle()
-            elif selectedmenu == 0:
-                # print("Program Exit....\n")
+            elif selectedmenu == 0:                
                 False
                 break
             else:
@@ -54,15 +53,13 @@ def convert_celsius():
         return print((f - 32) * 5/9)
     except ValueError:
         print("Input value of Fahrenheit is invalid, please provide correct value.")
-        pass
         
 def convert_fahrenheit():
     try:
         c = int(input("Enter Celsius value: "))    
         return print((c * 9/5) + 32)
     except ValueError:
-        print("Input value of Celsius is invalid, please provide correct value")
-        pass
+        print("Input value of Celsius is invalid, please provide correct value.")
 
 def calculate_area_rectangle():
     try:
@@ -72,6 +69,5 @@ def calculate_area_rectangle():
         return print("Area of Rectangle: ", length * width)
     except ValueError:
         print(f"Input value of length or width is not valid for caculation!")        
-        pass
 
 main()
